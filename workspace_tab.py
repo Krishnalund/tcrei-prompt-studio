@@ -7,13 +7,11 @@ def render_workspace(template_data):
     if "reset_counter" not in st.session_state:
         st.session_state.reset_counter = 0
 
-    # --- UPDATED: Always ensure our memory state aligns with the incoming template data ---
+    # Always ensure our memory state aligns with the incoming template data 
     st.session_state.task_text = template_data["task"]
     st.session_state.context_text = template_data["context"]
     st.session_state.reference_text = template_data["reference"]
 
-    # We append a dynamic suffix to the key. Changing this suffix forces 
-    # Streamlit to destroy the old widget and instantiate a completely fresh, empty one.
     suffix = f"__res_{st.session_state.reset_counter}"
 
     task = st.text_area(
@@ -47,12 +45,12 @@ def render_workspace(template_data):
     
     # Clear fields action logic
     if st.button("Clear All Fields"):
-        # 1. Clear our underlying data tracking variables safely
+        # Clear our underlying data tracking variables safely
         st.session_state.task_text = ""
         st.session_state.context_text = ""
         st.session_state.reference_text = ""
         
-        # 2. Increment the counter to force-generate brand new blank widgets on the rerun
+        # Increment the counter to force-generate brand new blank widgets on the rerun
         st.session_state.reset_counter += 1
         st.rerun()
         

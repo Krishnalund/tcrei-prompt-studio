@@ -1,14 +1,10 @@
 [theme]
-# A vibrant cyber-blue accent for active selections and tabs
 primaryColor = "#38BDF8"          
 
-# A soft, neutralized mid-tone slate background (not too dark, not too bright)
 backgroundColor = "#334155"       
 
-# A slightly darker shade for input areas to create crisp visual depth
 secondaryBackgroundColor = "#1E293B" 
 
-# Clean, soft off-white text for excellent legibility without harsh glare
 textColor = "#F1F5F9"              
 
 font = "sans serif"

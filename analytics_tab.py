@@ -7,7 +7,7 @@ def render_analytics(task, context, reference, templates):
         st.info("💡 Fill out the framework workspace elements in Tab 1 to generate analytics.")
         return
 
-    # --- Calculation Engine ---
+    # Calculation Engine
     score = 0
     suggestions = []
 
@@ -40,7 +40,7 @@ def render_analytics(task, context, reference, templates):
         else:
             suggestions.append("💡 **Pro-Tip:** Adding a real input/output **Reference** example can improve model consistency by up to 40%.")
 
-    # --- Display Logic ---
+    # Display Logic 
     if score < 40: 
         st.error(f"Prompt Strength: Weak ({score}/100)")
     elif score < 80: 
