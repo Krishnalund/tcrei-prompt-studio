@@ -10,8 +10,10 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("⚡ T.C.R.E.I. Prompt Studio & Optimizer")
-st.markdown("*Thoughtfully Create Really Excellent Inputs.*")
+# --- Aesthetic Header Layout (Milk & Plum Edition) ---
+# --- Aesthetic Header Layout ---
+st.markdown("<h1 style='text-align: center; color: #5B2A5E;'>⚡ T.C.R.E.I. Prompt Studio</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-style: italic; color: #2E1435;'>Thoughtfully Create Really Excellent Inputs.</p>", unsafe_allow_html=True)
 st.divider()
 
 TEMPLATES = {
@@ -65,5 +67,3 @@ with tab_analytics:
 with tab_export:
     render_export(task_input, context_input, reference_input)
 
-st.divider()
-st.caption("Built with ❤️ by Krishna Lund | Modular Architecture Edition")
