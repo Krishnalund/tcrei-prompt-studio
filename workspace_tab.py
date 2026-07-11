@@ -7,13 +7,10 @@ def render_workspace(template_data):
     if "reset_counter" not in st.session_state:
         st.session_state.reset_counter = 0
 
-    # Initialize raw default states for the very first load
-    if "task_text" not in st.session_state:
-        st.session_state.task_text = template_data["task"]
-    if "context_text" not in st.session_state:
-        st.session_state.context_text = template_data["context"]
-    if "reference_text" not in st.session_state:
-        st.session_state.reference_text = template_data["reference"]
+    # --- UPDATED: Always ensure our memory state aligns with the incoming template data ---
+    st.session_state.task_text = template_data["task"]
+    st.session_state.context_text = template_data["context"]
+    st.session_state.reference_text = template_data["reference"]
 
     # We append a dynamic suffix to the key. Changing this suffix forces 
     # Streamlit to destroy the old widget and instantiate a completely fresh, empty one.

@@ -10,10 +10,17 @@ st.set_page_config(
     layout="centered"
 )
 
-# --- Aesthetic Header Layout (Milk & Plum Edition) ---
-# --- Aesthetic Header Layout ---
-st.markdown("<h1 style='text-align: center; color: #5B2A5E;'>⚡ T.C.R.E.I. Prompt Studio</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; font-style: italic; color: #2E1435;'>Thoughtfully Create Really Excellent Inputs.</p>", unsafe_allow_html=True)
+# --- 1. NEW: Callback function to trigger UI reset on template switch ---
+if "reset_counter" not in st.session_state:
+    st.session_state.reset_counter = 0
+
+def handle_template_change():
+    st.session_state.reset_counter += 1
+
+
+# --- Aesthetic Header Layout (Dimmed Slate Edition) ---
+st.markdown("<h1 style='text-align: center; color: #38BDF8;'>⚡ T.C.R.E.I. Prompt Studio</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-style: italic; color: #F1F5F9;'>Thoughtfully Create Really Excellent Inputs</p>", unsafe_allow_html=True)
 st.divider()
 
 TEMPLATES = {
@@ -39,7 +46,12 @@ TEMPLATES = {
 if "prev_template" not in st.session_state:
     st.session_state.prev_template = "Blank Workspace"
 
-selected_template = st.selectbox("📚 Choose a Starter Template:", list(TEMPLATES.keys()))
+# --- 2. UPDATED: Added the on_change listener here ---
+selected_template = st.selectbox(
+    "📚 Choose a Starter Template:", 
+    list(TEMPLATES.keys()),
+    on_change=handle_template_change
+)
 
 # If the user intentionally clicks a new template, overwrite session state values
 if selected_template != st.session_state.prev_template:
@@ -66,4 +78,3 @@ with tab_analytics:
 
 with tab_export:
     render_export(task_input, context_input, reference_input)
-
