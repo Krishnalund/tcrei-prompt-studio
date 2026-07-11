@@ -33,7 +33,7 @@ The app walks you through a complete prompt engineering life cycle:
 ## 🛠️ Tech Stack & Requirements
 
 * **Language & Framework:** Python and Streamlit.
-* **AI Integration:** This application runs entirely as a local/edge client architecture. It does **not** make external API calls, require OpenAI/Anthropic API keys, or send your data to any third-party AI models. 
+* **AI Integration:** This application runs entirely as a local/edge client architecture. It does **not** make external API calls or require OpenAI/Anthropic API keys.
 * **Privacy-First Workflow:** It acts as a secure, offline structuring environment where you perfect your prompts locally before manually copying them into your AI tool of choice.
 
 ---
