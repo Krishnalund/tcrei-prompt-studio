@@ -2,9 +2,33 @@
 
 A simple, smart workspace built with Streamlit to help you write structured, high-quality AI prompts using the T.C.R.E.I. framework.
 
+---
+
+## 🚀 Live Demo
+You can try the **T.C.R.E.I. Prompt Studio** live in your browser without any installation or API keys:
+👉 **[Launch Live App](https://tcrei-prompt-studio-fjejm3z8wbera8qer7slc9.streamlit.app/)**
 
 ---
 
+## 🛠️ Local Setup & Installation
+
+If you want to run this application locally on your machine or contribute to the project, follow these simple steps:
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/Krishnalund/tcrei-prompt-studio](https://github.com/Krishnalund/tcrei-prompt-studio)
+cd tcrei-prompt-studio
+```
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+### 3. Run the Application
+```bash
+streamlit run app.py
+```
+
+---
 ### What does T.C.R.E.I. stand for?
 The app walks you through a complete prompt engineering life cycle:
 * **T - Task:** Exactly what you want the AI to do.
