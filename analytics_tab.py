@@ -38,7 +38,7 @@ def render_analytics(task, context, reference, templates):
             score += 15
             suggestions.append("💡 **Provide Actual Data:** Replace the template's reference placeholders with genuine examples.")
         else:
-            suggestions.append("💡 **Pro-Tip:** Adding a real input/output **Reference** example can improve model consistency by up to 40%.")
+            suggestions.append("💡 **Pro-Tip:** Adding a real input/output **Reference** example generally improves model consistency and reduces ambiguity.")
 
     # Display Logic 
     if score < 40: 
